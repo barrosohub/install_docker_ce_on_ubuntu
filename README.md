@@ -15,18 +15,10 @@ Este script Bash automatiza o processo de instalação do Docker no Ubuntu.
 
 ## Uso
 
-1. Abra um terminal no Ubuntu.
-2. Torne o script executável com o comando `chmod +x nome_do_script.sh`.
-3. Execute o script com `./nome_do_script.sh`.
-4. Reinicie o terminal ou faça logout/login para aplicar as alterações ao grupo do usuário.
+1. Abra um terminal do Ubuntu.
+2. Baixe o script com o comando `wget https://raw.githubusercontent.com/barrosohub/docker_ce_ubuntu_20_04/main/install.sh`.
+3. Torne o script executável com o comando `chmod +x install.sh`.
+4. Execute o script com o comando:
 
-## Destaques do script
-
-- `sudo apt update && sudo apt upgrade -y`: Atualiza o sistema operacional.
-- `sudo apt-get install -y apt-transport-https ca-certificates curl software-properties-common`: Instala pacotes necessários.
-- `curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg`: Adiciona a chave GPG do Docker.
-- `echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null`: Configura o repositório do Docker.
-- `sudo apt install -y docker-ce docker-ce-cli containerd.io`: Instala o Docker e seus componentes.
-- `sudo systemctl enable docker`: Habilita o serviço do Docker.
-- `sudo systemctl start docker`: Inicia o serviço do Docker.
-- `sudo usermod -aG docker $USER`: Adiciona o usuário atual ao grupo do Docker.
+```bash
+sudo ./install.sh
