@@ -21,4 +21,5 @@ Este script Bash automatiza o processo de instalação do Docker no Ubuntu.
 4. Execute o script com o comando:
 
 ```bash
-sudo ./install.sh && sudo service docker start
+sudo ./docker_installer.sh
+```
