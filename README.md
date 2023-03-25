@@ -1,6 +1,6 @@
-# Instalação do Docker no Ubuntu
+# Instalação do Docker no Ubuntu 20.04
 
-Este script Bash automatiza o processo de instalação do Docker no Ubuntu.
+Este script Bash automatiza o processo de instalação do Docker no Ubuntu 20.04.
 
 ## Resumo do script
 
