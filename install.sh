@@ -17,7 +17,7 @@ echo \
   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 
 # Atualiza a lista de pacotes do sistema e instala o Docker
-sudo apt update && sudo apt install -y docker-ce docker-ce-cli containerd.io
+sudo apt update && sudo apt install -y docker-ce docker-ce-cli containerd.io docker-compose -y
 
 # Habilita e inicia o serviço do Docker
 if grep -qEi "(Microsoft|WSL)" /proc/version &>/dev/null ; then
