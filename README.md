@@ -1,6 +1,6 @@
-# Instalação do Docker no Ubuntu 20.04
+# Instalação do Docker CE no Ubuntu
 
-Este script Bash automatiza o processo de instalação do Docker no Ubuntu 20.04.
+Este script Bash automatiza o processo de instalação do Docker no Ubuntu
 
 ## Resumo do script
 
@@ -16,7 +16,7 @@ Este script Bash automatiza o processo de instalação do Docker no Ubuntu 20.04
 ## Uso
 
 1. Abra um terminal do Ubuntu.
-2. Baixe o script com o comando `wget -O docker_installer.sh https://raw.githubusercontent.com/barrosohub/docker_ce_ubuntu_20_04/main/install.sh`.
+2. Baixe o script com o comando `wget -O docker_installer.sh https://raw.githubusercontent.com/barrosohub/install_docker_ce_on_ubuntu/main/install.sh`.
 3. Torne o script executável com o comando `chmod +x docker_installer.sh`.
 4. Execute o script com o comando:
 
