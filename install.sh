@@ -26,7 +26,7 @@ if ps -p1 | grep -q systemd; then
 elif grep -qEi "(Microsoft|WSL)" /proc/version &> /dev/null; then
     sudo service docker start
 else
-    echo "Unable to start Docker. Your system does not seem to use systemd or WSL. Execute 'wsl --set-default-version 2' and try again"
+    echo "Unable to start Docker. Your system does not seem to use systemd or WSL. Execute this command in your powershell 'wsl --set-default-version 2' and try again install docker"
 fi
 
 # Adiciona o usuário atual ao grupo do Docker
