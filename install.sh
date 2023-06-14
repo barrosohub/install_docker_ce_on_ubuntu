@@ -27,4 +27,4 @@ else
 fi
 
 # Adiciona o usuário atual ao grupo do Docker
-sudo usermod -aG docker $USER
+sudo usermod -aG docker $USER && newgrp docker
