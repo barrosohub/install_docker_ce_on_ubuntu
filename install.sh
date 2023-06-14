@@ -20,10 +20,13 @@ echo \
 sudo apt update && sudo apt install -y docker-ce docker-ce-cli containerd.io docker-compose -y
 
 # Habilita e inicia o serviço do Docker
-if grep -qEi "(Microsoft|WSL)" /proc/version &>/dev/null ; then
-  sudo service docker start
+if ps -p1 | grep -q systemd; then
+    sudo systemctl enable docker
+    sudo systemctl start docker
+elif grep -qEi "(Microsoft|WSL)" /proc/version &> /dev/null; then
+    sudo service docker start
 else
-  sudo systemctl enable docker && sudo systemctl start docker
+    echo "Unable to start Docker. Your system does not seem to use systemd or WSL. Execute 'wsl --set-default-version 2' and try again"
 fi
 
 # Adiciona o usuário atual ao grupo do Docker
