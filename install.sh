@@ -22,10 +22,9 @@ echo \
 sudo apt update 
 sudo apt install -y docker-ce docker-ce-cli containerd.io
 
-# Verifica se systemd está em execução
-if systemctl list-units --type=service --state=running | grep -q docker; then
-    sudo systemctl enable docker
-    sudo systemctl start docker
+# Verifica se Docker está em execução
+if docker ps > /dev/null 2>&1; then
+    echo "Docker is running."
 elif grep -qEi "(Microsoft|WSL)" /proc/version &> /dev/null; then
     sudo service docker start
 elif [[ $(uname -r) =~ Microsoft$ ]]; then
