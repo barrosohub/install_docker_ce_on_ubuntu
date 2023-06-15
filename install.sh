@@ -1,7 +1,9 @@
 #!/bin/bash
+set -e
 
 # Atualiza o sistema operacional e instala pacotes necessários
-sudo apt update && sudo apt upgrade -y && sudo apt-get install -y \
+sudo apt update && sudo apt upgrade -y
+sudo apt-get install -y \
   apt-transport-https \
   ca-certificates \
   curl \
@@ -17,16 +19,19 @@ echo \
   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 
 # Atualiza a lista de pacotes do sistema e instala o Docker
-sudo apt update && sudo apt install -y docker-ce docker-ce-cli containerd.io docker-compose -y
+sudo apt update 
+sudo apt install -y docker-ce docker-ce-cli containerd.io
 
-# Habilita e inicia o serviço do Docker
-if ps -p1 | grep -q systemd; then
+# Verifica se systemd está em execução
+if systemctl list-units --type=service --state=running | grep -q docker; then
     sudo systemctl enable docker
     sudo systemctl start docker
 elif grep -qEi "(Microsoft|WSL)" /proc/version &> /dev/null; then
     sudo service docker start
+elif [[ $(uname -r) =~ Microsoft$ ]]; then
+    echo "WSL detected. Execute this command in your PowerShell: 'wsl --set-default-version 2' and then reinstall Docker."
 else
-    echo "Unable to start Docker. Your system does not seem to use systemd or WSL. Execute this command in your powershell 'wsl --set-default-version 2' and try again install docker"
+    echo "Unable to start Docker. Your system does not seem to use systemd or WSL."
 fi
 
 # Adiciona o usuário atual ao grupo do Docker
