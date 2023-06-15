@@ -18,6 +18,6 @@ Este é um script Bash que torna a instalação do Docker no Ubuntu muito mais f
 1. 🖥️ Abra um terminal do Ubuntu.
 2. ⬇️ Baixe o script com o comando: `wget -O docker_installer.sh https://raw.githubusercontent.com/barrosohub/install_docker_ce_on_ubuntu/main/install.sh`
 3. 🎛️ Torne o script executável com o comando: `chmod +x docker_installer.sh`
-4. ▶️ Execute o script com o comando: `sudo ./docker_installer.sh`
+4. ▶️ Execute o script com o comando: `./docker_installer.sh`
 
 E pronto! 🎉 O Docker estará instalado e pronto para uso.
