@@ -31,3 +31,14 @@ fi
 
 # Adiciona o usuário atual ao grupo do Docker
 sudo usermod -aG docker $USER && newgrp docker
+
+# Instala o Docker Compose
+sudo apt update
+sudo apt install -y docker-compose
+
+# Verifica se o Docker Compose foi instalado corretamente
+if docker-compose -v > /dev/null 2>&1; then
+    echo "Docker Compose is installed."
+else
+    echo "Unable to install Docker Compose."
+fi
