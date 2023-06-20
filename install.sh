@@ -36,6 +36,9 @@ sudo usermod -aG docker $USER && newgrp docker
 sudo apt update
 sudo apt install -y docker-compose
 
+# Força início do Docker
+sudo service docker start
+
 # Verifica se o Docker Compose foi instalado corretamente
 if docker-compose -v > /dev/null 2>&1; then
     echo "Docker Compose is installed."
