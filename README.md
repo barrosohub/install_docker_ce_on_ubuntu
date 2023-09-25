@@ -4,7 +4,7 @@ Este é um script Bash que torna a instalação do Docker no Ubuntu muito mais f
 
 ## 📋 O que esse script faz?
 
-1. 🔄 Atualiza o sistema operacional.
+1. 🔄 Atualiza os pacotes do sistema operacional.
 2. 📦 Instala pacotes necessários para adicionar o repositório do Docker.
 3. 🔑 Adiciona a chave GPG oficial do Docker.
 4. 🛠️ Configura o repositório do Docker.
